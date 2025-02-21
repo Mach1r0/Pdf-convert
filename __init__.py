@@ -24,7 +24,7 @@ def create_app(test_config=None):
         for key, value in data.items():
             pdf.cell(200, 10, txt=f"{key}: {value}", ln=True)
 
-        output_path = f'/app/files/output/{pdf_name}.pdf'
+        output_path = os.path.join(app.root_path, 'files', 'output', f'{pdf_name}.pdf')
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         pdf.output(output_path)
         app.logger.info(f"PDF saved to: {output_path}")

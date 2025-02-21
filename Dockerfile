@@ -9,4 +9,6 @@ COPY . .
 
 RUN mkdir -p /app/files/output  
 
+EXPOSE 5000
+
 CMD ["python", "app.py"]
